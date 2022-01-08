@@ -27,7 +27,9 @@ object SmartcloudInstanceKindService {
         .map(InstanceKind(_))
         .pure[F]
 
-    override def getPriceByKind(kind: String): F[InstanceKindWithPrice] = ???
+    override def getPriceByKind(kind: String): F[InstanceKindWithPrice] =
+      InstanceKindWithPrice(SmartCloudPriceServiceImpl.getPriceOfInstanceByKind(config.baseUri, config.token, kind))
+        .pure[F]
   }
 
 }
