@@ -82,7 +82,7 @@ http://localhost:8080/instance-kinds
 #### API GET /prices?kind=sc2-micro
 Get price of given instance kind [getPriceOfKind](http://localhost:8080/instance-kinds/prices?kind=sc2-himem-2)
 ```text
-http://localhost:8080/instance-kinds/prices?kind=sc2-himem-2
+http://localhost:8080/instance-kinds/prices?kind=sc2-micro
 ```
 Response example
 ```json
