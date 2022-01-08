@@ -23,7 +23,7 @@ object SmartcloudInstanceKindService {
     implicit val instanceKindsWithPriceEntityDecoder: EntityDecoder[F, String] = jsonOf[F, String]
 
     override def getAll(): F[List[InstanceKind]] =
-      List("sc2-micro", "sc2-small", "sc2-medium") // Dummy data. Your implementation should call the smartcloud API.
+      SmartCloudPriceServiceImpl.getAllInstance(config.baseUri, config.token)
         .map(InstanceKind(_))
         .pure[F]
 
