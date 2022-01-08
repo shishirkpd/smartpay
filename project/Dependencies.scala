@@ -5,10 +5,11 @@ object Dependencies {
   object V { // Versions
     // Scala
 
-    val http4s     = "1.0.0-M29"
+    val http4s     = "0.23.7"
     val circe      = "0.15.0-M1"
     val logback    = "1.2.6"
     val pureConfig = "0.16.0"
+    val sttp       = "3.3.18"
 
     // Test
     val munit = "0.7.29"
@@ -25,6 +26,10 @@ object Dependencies {
     val circe      = "io.circe"              %% "circe-generic"   % V.circe
     val logback    = "ch.qos.logback"         % "logback-classic" % V.logback
     val pureConfig = "com.github.pureconfig" %% "pureconfig"      % V.pureConfig
+    val circeParser = "io.circe"              %% "circe-parser"   % V.circe
+    val circeGeneric = "io.circe"             %% "circe-generic"  % V.circe
+
+    val sttp       = "com.softwaremill.sttp.client3" %% "async-http-client-backend-cats" % V.sttp
   }
 
   object T { // Test dependencies

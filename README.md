@@ -39,3 +39,56 @@ The API should be running on your port 8080.
 # How to submit
 
 Please push your code to a public repository and submit the link via email. Please do not fork this repository.
+
+
+# How to run
+### Steps to follow
+1. SmartCloud should be up and running, use below command to run smartcloud
+```
+docker run -p 9999:9999 smartpayco/smartcloud:latest
+```
+2. Run the smartcloud-prices code by using below command
+```
+$ sbt run
+```
+3. Access api using below urls
+#### API GET /instance-kinds
+Get all running instance kind [getAllInstances](http://localhost:8080/instance-kinds)
+```
+http://localhost:8080/instance-kinds
+```
+ Response example
+```json
+[ { "kind": "sc2-micro" }, 
+  { "kind": "sc2-small" },
+  { "kind": "sc2-medium" },
+  { "kind": "sc2-std-2" },
+  { "kind": "sc2-std-4" },
+  { "kind": "sc2-std-8" },
+  { "kind": "sc2-std-16" },
+  { "kind": "sc2-std-32" },
+  { "kind": "sc2-himem-2" },
+  { "kind": "sc2-himem-4" },
+  { "kind": "sc2-himem-8" },
+  { "kind": "sc2-himem-16" },
+  { "kind": "sc2-himem-32" },
+  { "kind": "sc2-hicpu-2" },
+  { "kind": "sc2-hicpu-4" },
+  { "kind": "sc2-hicpu-8" },
+  { "kind": "sc2-hicpu-16" },
+  { "kind": "sc2-hicpu-32" }
+]
+```
+#### API GET /prices?kind=sc2-micro
+Get price of given instance kind [getPriceOfKind](http://localhost:8080/instance-kinds/prices?kind=sc2-micro)
+```text
+http://localhost:8080/instance-kinds/prices?kind=sc2-micro
+```
+Response example
+```json
+{
+  "kind": "sc2-micro",
+  "price": 0.883,
+  "timestamp": "2022-01-08T13:09:13.917Z"
+}
+```
